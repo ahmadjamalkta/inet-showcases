@@ -5,18 +5,17 @@ Goals
 -----
 
 INET has support for recording PCAP traces from simulations. The
-recording process produces PCAP files that are similar to real world
+recording process produces PCAP files that are similar to real-world
 PCAP traces, so one can use the same tools and techniques for analyzing
 simulated traffic as used on real traffic, such as Wireshark and
-TCPDump. Knowledge of PCAP can be reused in the context of simulations.
+tcpdump. Knowledge of PCAP can be reused in the context of simulations.
 
 This showcase contains an example simulation, which generates and
 records PCAP traces of TCP, UDP, and ICMP traffic, using various
-physical layer protocols like ethernet and 802.11.
+physical layer protocols like Ethernet and 802.11.
 
-INET version: ``4.0``
-
-Source files location: `inet/showcases/general/pcaprecording <https://github.com/inet-framework/inet-showcases/tree/master/general/pcaprecording>`__
+| INET version: ``4.0``
+| Source files location: `inet/showcases/general/pcaprecording <https://github.com/inet-framework/inet-showcases/tree/master/general/pcaprecording>`__
 
 The model
 ---------
@@ -54,17 +53,17 @@ selecting a module vector, ``[*]`` can be used. The recorded modules are
 on the same level in the hierarchy as the PCAP recorder module. The
 default value for the :par:`moduleNamePatterns` parameter is
 ``wlan[*] eth[*] ppp[*] ext[*]``, so it records the most commonly
-present L2 interfaces. The :par:`dumpProtocols` parameter is a filter, and
+present L2 interfaces. The :par:`dumpProtocols` parameter is a filter and
 selects which protocols to include in the capture. It matches packets
 which are of the specified protocol type at the level of capture, but
 not the protocol type of encapsulated packets. The parameter takes
 protocol names registered in INET (see
-`/inet/scr/inet/common/Protocol.cc <https://github.com/inet-framework/inet/blob/master/src/inet/common/Protocol.cc>`__)
+`/inet/src/inet/common/Protocol.cc <https://github.com/inet-framework/inet/blob/master/src/inet/common/Protocol.cc>`__)
 The parameter's default value is ``"ethernetmac ppp ieee80211mac"``.
 
 By default the PCAP recorder module records L2 frames, but setting the
 ``moduleNamePatterns`` to ``ipv4``, for example, lets one record L3
-frames (note that the parameter's value is lowercase, because it refers
+frames (note that the parameter's value is lowercase because it refers
 to the actual ``ipv4`` module in the host, not the module type.) In
 order to record IP frames, the :par:`pcapNetwork` parameter also needs to
 be set to the proper link layer header type (101 - raw IP), and the
@@ -77,10 +76,10 @@ proper trace. However, if there are multiple kinds of interfaces the
 node connects with, the set of captured interfaces or physical layer
 protocols should be narrowed to the ones with the link layer header type
 specified by the :par:`pcapNetwork` parameter. It is needed because traffic
-for all interfaces are included in the trace by default. Multiple PCAP
+for all interfaces is included in the trace by default. Multiple PCAP
 recorder modules need to be included in the network to record packets
 with different link layer headers. One PCAP recorder module should only
-record traces with one link layer header type, because the packets with
+record traces with one link layer header type because the packets with
 the other header types would not be recognized by PCAP programs.
 
 Additionally, there are two packet filtering parameters. The
@@ -89,12 +88,12 @@ properties, most commonly the packet's name. The :par:`packetDataFilter`
 parameter can filter for the packet's contents, i.e. the contained
 chunks. Specifically, it can filter for class names of protocol headers,
 and their fields. The expression given as the parameter's value is
-evaluated for all chuncks, and the set of recorded packets are narrowed
+evaluated for all chunks, and the set of recorded packets are narrowed
 to the ones that match the expression. The default value of both
 parameters is ``*``, thus no packets are filtered. See the following
 sections for examples.
 
-To summerize: the :par:`moduleNamePatterns` parameter specifies which
+To summarize: the :par:`moduleNamePatterns` parameter specifies which
 modules' outputs should be captured. The :par:`pcapNetwork` parameter sets
 the link layer header type according to the captured module outputs, so
 PCAP programs can interpret the PCAP file correctly. The
@@ -105,7 +104,7 @@ parameters can further narrow the set of captured packets.
 The configuration
 ~~~~~~~~~~~~~~~~~
 
-The example simulation for this showcase contains wired and wireless
+The example simulation for this showcase contains wired hosts, wireless
 hosts, and routers. The hosts are configured to generate TCP, UDP and
 ICMP traffic. The hosts connect to routers via ethernet, the connection
 between the routers is ppp. The wireless hosts communicate via 802.11.
@@ -235,7 +234,7 @@ capture file, L2 and L3 modules need to be set to compute CRC and FCS:
 Note that these settings are required, otherwise an error is returned.
 
 The :par:`alwaysFlush` parameter controls whether to write packets to the
-pcap file as they are recorded, or after the simulation has concluded.
+pcap file as they are recorded or after the simulation has concluded.
 It is ``false`` by default, but it's set to ``true`` in all PCAP
 recorders to make sure there are recorded packets even if the simulation
 crashes:
