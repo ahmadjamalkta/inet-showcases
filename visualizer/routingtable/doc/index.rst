@@ -7,7 +7,7 @@ Goals
 In a complex network topology, it is difficult to see how a packet would
 be routed because the relevant data is scattered among network nodes and
 hidden in their routing tables. INET contains support for visualization
-of routing tables, and can display routing information graphically in a
+of routing tables and can display routing information graphically in a
 concise way. Using visualization, it is often possible to understand
 routing in a simulation without looking into individual routing tables.
 The visualization currently supports IPv4.
@@ -40,7 +40,7 @@ Routing table entries are represented visually by solid arrows. An arrow
 going from a source node represents a routing table entry in the source
 node's routing table. The endpoint node of the arrow is the next hop in
 the visualized routing table entry. By default, the routing entry is
-displayed on the arrows in following format: ``destination/mask -> gateway (interface)``
+displayed on the arrows in the following format: ``destination/mask -> gateway (interface)``
 
 The format can be changed by setting the visualizer's ``labelFormat``
 parameter.
@@ -201,9 +201,9 @@ configuration from the ini file.
 
 The network contains a series of :ned:`AodvRouter`'s. These are mobile hosts
 that have AODV and IP forwarding enabled. Six of the hosts are laid out
-in a chain, and are stationary. Their communication ranges are specified
+in a chain and are stationary. Their communication ranges are specified
 so that each host can only reach the adjacent hosts. ``destinationHost``
-moves up and down along the chain, and is only in the communication
+moves up and down along the chain and is only in the communication
 range of one or two nearby hosts.
 
 We want the AODV protocol to configure the routing tables, so the
@@ -231,7 +231,7 @@ part of the packet relay, and the unused entries remain in their routing
 tables for a while, then they time out and are removed. When
 ``destinationHost`` gets to the top of the scene, the process
 starts over again. The visualizer continually reacts to changes in the
-routing tables, and updates the visualization accordingly.
+routing tables and updates the visualization accordingly.
 
 More information
 ----------------
