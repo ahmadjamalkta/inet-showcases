@@ -21,7 +21,7 @@ About the Visualizer
 
 In INET, data link activity can be visualized by including a
 :ned:`DataLinkVisualizer` module in the simulation. Adding an
-:ned:`IntegratedVisualizer` module is also an option, because it also
+:ned:`IntegratedVisualizer` module is also an option because it also
 contains a :ned:`DataLinkVisualizer` module. Data link visualization is
 disabled by default, it can be enabled by setting the visualizer's
 :par:`displayLinks` parameter to true.
@@ -36,7 +36,7 @@ the :par:`activityLevel` parameter.
    which are processed inside the link layer in the source node and
    processed inside the link layer in the destination node.
 -  At *protocol* level, :ned:`DataLinkVisualizer` displays those packets
-   which are going out at the bottom of link layer in the source node
+   which are going out at the bottom of the link layer in the source node
    and going in at the bottom of the link layer in the destination node.
 
 The activity between two nodes is represented visually by an arrow that
@@ -83,16 +83,16 @@ The following video shows what happens when the simulation is started.
 
 At the beginning of the video, a red strip appears and moves from
 ``wiredSource`` to ``wiredDestination``. This strip is the standard
-OMNeT++ animation for packet transmissions, and has nothing to do with
+OMNeT++ animation for packet transmissions and has nothing to do with
 :ned:`DataLinkVisualizer`. When the packet is received in whole by
 ``wiredDestination`` (the red strip disappears), a dark cyan arrow is
 added by :ned:`DataLinkVisualizer` between the two hosts, indicating data
 link activity. The packet's name is also displayed on the arrow. The
-arrow fades out quickly, because the :par:`fadeOutTime` parameter of the
+arrow fades out quickly because the :par:`fadeOutTime` parameter of the
 visualizer is set to a small value.
 
 Visualization in a wireless network is very similar. Our next example is
-the wireless variant of the above simulation. In this network we use two
+the wireless variant of the above simulation. In this network, we use two
 :ned:`AdhocHost`'s, ``wirelessSource`` and ``wirelessDestination``. The
 traffic and the visualization settings are the same as the configuration
 of the wired example. The simulation can be run by choosing the
@@ -109,14 +109,14 @@ The following animation depicts what happens when the simulation is run.
 This animation is similar to the video of the wired example (apart from
 an extra blue dotted line which can be ignored, as it is also part of
 the standard OMNeT++ packet animation.) Note, however, that the ACK
-frame does not activate the visualization, because ACK frames do not
-pass through data link layer.
+frame does not activate the visualization because ACK frames do not
+pass through the data link layer.
 
 Filtering Data Link Activity
 ----------------------------
 
 In complex networks with many nodes and several protocols in use, it is
-often useful to be able to filter network traffic, and visualize only
+often useful to be able to filter network traffic and visualize only
 the part of the traffic we are interested in. The following example
 shows how to set packet filtering in :ned:`DataLinkVisualizer`. This
 simulation can be run by choosing the ``Filtering`` configuration from
@@ -191,7 +191,7 @@ We use the following wireless network for this example.
 .. figure:: ActivityLevel_v1206.png
    :width: 100%
 
-The network consists three :ned:`AdhocHost` nodes, ``person1``, ``person2``
+The network consists of three :ned:`AdhocHost` nodes: ``person1``, ``person2``
 and ``videoServer``. ``VideoServer`` will be streaming a video to
 ``person1``. ``Person2`` will be inactive in this example.
 
@@ -248,9 +248,9 @@ reassembled in and is sent to the upper layers. As a result of this, a
 green arrow is displayed between ``videoServer`` and ``person1``,
 representing data link activity at *service* level.
 
-An other phenomenon can also be observed in the video. There is
+Another phenomenon can also be observed in the video. There is
 *protocol* level data link activity between ``person2`` and the other
-nodes. This is, because frames are also received in the physical layer
+nodes. This is because frames are also received in the physical layer
 of ``person2``, but they are dropped at data link layer level because
 they are not addressed to ``person2``.
 
@@ -341,7 +341,7 @@ the receiver node to the network layer (IPv4), where they are routed
 towards the next hop.
 
 When the existing route breaks due to two nodes drifting away (out of
-the communication range of each other), this manifests as link-level
+the communication range of each other), this manifests as a link-level
 failure (ACK frames do not arrive). This condition is detected by AODV
 and it starts searching for a new route. When the new route is found,
 the ping traffic resumes.
