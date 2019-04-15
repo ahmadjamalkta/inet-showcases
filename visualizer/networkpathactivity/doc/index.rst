@@ -21,7 +21,7 @@ About the Visualizer
 
 In INET, network path activity can be visualized by including a
 :ned:`NetworkRouteVisualizer` module in the simulation. Adding an
-:ned:`IntegratedVisualizer` module is also an option, because it also
+:ned:`IntegratedVisualizer` module is also an option because it also
 contains a :ned:`NetworkRouteVisualizer` module. Network path activity
 visualization is disabled by default, it can be enabled by setting the
 visualizer's :par:`displayRoutes` parameter to true.
@@ -79,15 +79,15 @@ The following video shows what happens when we start the simulation.
 
 At the beginning of the video, a red strip appears and moves from
 ``source`` to ``destination``. This strip is the standard OMNeT++
-animation for packet transmissions, and has nothing to do with
+animation for packet transmissions and has nothing to do with
 :ned:`NetworkRouteVisualizer`. When the packet is received in whole by
 ``destination`` (the red strip disappears), an arrow is added by
 :ned:`NetworkRouteVisualizer` between the two hosts, indicating network
 path activity. The packet's name is also displayed on the arrow. The
-arrow fades out quickly, because the :par:`fadeOutTime` parameter of the
+arrow fades out quickly because the :par:`fadeOutTime` parameter of the
 visualizer is set to a small value.
 
-Note, however, that ARP traffic does not activate the visualization,
+Note, however, that ARP traffic does not activate the visualization
 because ARP packets do not pass through the network layer.
 
 Filtering Network Path Activity
@@ -184,7 +184,7 @@ visualized after the ping packet has arrived to ``destination`` so we
 get information about the path changes immediately.
 
 When the existing route breaks due to two nodes drifting away (going out
-of the communication range of each other), this manifests as link-level
+of the communication range of each other), this manifests as a link-level
 failure. This condition is detected by AODV and it starts searching for
 a new route. When the new route is found, the ping traffic resumes.
 
