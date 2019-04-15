@@ -8,9 +8,8 @@ Simulating scenarios that involve aircraft, drones, etc. require modeling
 of movement in three dimensions. In this showcase, we show how such spatial
 movement can be produced and visualized with INET.
 
-INET version: ``4.1``
-
-Source files location: `inet/showcases/mobility/spatial <https://github.com/inet-framework/inet-showcases/tree/master/mobility/spatial>`__
+| INET version: ``4.1``
+| Source files location: `inet/showcases/mobility/spatial <https://github.com/inet-framework/inet-showcases/tree/master/mobility/spatial>`__
 
 Overview
 --------
@@ -62,7 +61,7 @@ The coordinate axes can be displayed by setting the :par:`axisLength` parameter.
 Additional settings (not shown above) stretch the rendered scene a little larger
 than the constraint area of the mobility models to enhance visual appearance.
 
-Further settings enable various effects in the mobility visualization. Note however, that
+Further settings enable various effects in the mobility visualization. Note, however, that
 at the time of writing, not all features are implemented in :ned:`MobilityOsgVisualizer`
 (practically, only trail visualization is).
 
