@@ -11,7 +11,7 @@ or if there is any communication at all. Transport connection
 visualization makes it easy to get information about the active
 transport connections in the network at a glance. Visualization makes it
 easy to identify connections by their two endpoints, and to tell
-different connections apart. It also gives a quick overview about the
+different connections apart. It also gives a quick overview of the
 number of connections in individual nodes and the whole network.
 
 This showcase demonstrates the visualization of TCP connections via two
@@ -27,7 +27,7 @@ About the visualizer
 The :ned:`TransportConnectionVisualizer` module (also part of
 :ned:`IntegratedVisualizer`) displays color-coded icons above the two
 endpoints of an active, established transport layer level connection.
-The icons will appear when the connection is established, and disappear
+The icons will appear when the connection is established and disappear
 when it is closed. Naturally, there can be multiple connections open at
 a node, thus there can be multiple icons. Icons have the same color at
 both ends of the connection. In addition to colors, letter codes (A, B,
@@ -65,7 +65,7 @@ The network contains two :ned:`StandardHost`'s connected to each other, each
 containing a TCP application. IP addresses and routing tables are
 configured by a :ned:`Ipv4NetworkConfigurator` module. The visualizer
 module is a :ned:`TransportConnectionVisualizer`. The application in
-``host1`` is configured to open a TCP connection to ``host2``, and send
+``host1`` is configured to open a TCP connection to ``host2`` and send
 data to it. The visualization of transport connections is enabled with
 the visualizer's :par:`displayTransportConnections` parameter:
 
@@ -85,7 +85,7 @@ Multiple transport connections
 ------------------------------
 
 The following example simulation demonstrates the visualization of
-multiple connections, and the filtering by node and port number. The
+multiple connections and the filtering by node and port number. The
 simulation can be run by choosing the ``MultipleConnections``
 configuration from the ini file. It uses the following network:
 
