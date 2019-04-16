@@ -11,7 +11,7 @@ a hierarchical network (e.g. using :ned:`Ipv4NetworkConfigurator`), visual
 inspection can help to verify that the result matches the expectations.
 While it is true that addresses and other interface data can also be
 accessed in the GUI by diving into the interface tables of each node,
-that is tedious, and unsuitable for getting an overview.
+that is tedious and unsuitable for getting an overview.
 
 This showcase contains two example simulations. The first one demonstrates the
 visualization with the visualizer's default settings, the second one is
