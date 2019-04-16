@@ -29,9 +29,9 @@ properties are defined in the XML configuration of the
 
 The two-dimensional projection of physical objects is determined by the
 :ned:`SceneCanvasVisualizer` module. (This is because the projection is
-also needed by other visualizers, for example :ned:`MobilityVisualizer`.)
-The default view is top view (z axis), but you can also configure side
-view (x and y axes), or isometric or ortographic projection.
+also needed by other visualizers, for example, :ned:`MobilityVisualizer`.)
+The default view is top view (z-axis), but you can also configure side
+view (x and y axes), or isometric or orthographic projection.
 
 The default view
 ----------------
