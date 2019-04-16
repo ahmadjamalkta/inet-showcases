@@ -18,7 +18,7 @@ About the visualizer
 
 In INET, IEEE 802.11 network membership can be visualized by including a
 :ned:`Ieee80211Visualizer` module in the simulation. Adding an
-:ned:`IntegratedVisualizer` is also an option, because it also contains a
+:ned:`IntegratedVisualizer` is also an option because it also contains a
 :ned:`Ieee80211Visualizer`. Displaying network membership is disabled by
 default, it can be enabled by setting the visualizer's
 :par:`displayAssociations` parameter to ``true``.
@@ -47,7 +47,7 @@ following network:
 
 The network contains a :ned:`WirelessHost` and an :ned:`AccessPoint`. The
 access point SSID is left at the default setting, ``"SSID"``. At the
-beginning of the simulation, the host will initate association with the
+beginning of the simulation, the host will initiate association with the
 access point. When the association process goes through, the node
 becomes part of the wireless network, and this should be indicated by
 the icon.
