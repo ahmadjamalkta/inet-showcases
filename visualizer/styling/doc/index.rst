@@ -12,7 +12,7 @@ visualizers have many customization options. These customization options
 are named consistently across all visualizers.
 
 This showcase consists of four examples which demonstrate how to
-customize lines, arrows, icons, fonts and annotations.
+customize lines, arrows, icons, fonts, and annotations.
 
 | INET version: ``4.0``
 | Source files location: `inet/showcases/visualizer/styling <https://github.com/inet-framework/inet-showcases/tree/master/visualizer/styling>`__
@@ -50,7 +50,7 @@ and the customized visualization.
    :width: 80%
    :align: center
 
-The :par:`lineColor` parameter specifices the color of the arrow, and it
+The :par:`lineColor` parameter specifies the color of the arrow, and it
 accepts English color names (more precisely, SVG color names) and
 HTML-style RGB values. For the :ned:`NetworkRouteVisualizer`,
 :ned:`TransportRouteVisualizer` and :ned:`MobilityVisualizer` modules,
@@ -69,7 +69,7 @@ Customizing Labels
 
 Lines and arrows often have labels placed next to them for displaying
 additional information. Customizing the font or color of such labels is
-often useful, for example to highlight important information.
+often useful, for example, to highlight important information.
 
 The example simulation can be run by choosing the ``Font`` configuration
 from the ini file. The network is the same as in the previous example:
@@ -100,7 +100,7 @@ Font family, font size and font style can be set by using the
 you do not want to change that. For example, you can set ``labelFont``
 to ``"bold"`` so that font family and font size remain unchanged. The
 :par:`labelColor` parameter can be set to a single color by using a color
-name or a HTML-style RGB value.
+name or an HTML-style RGB value.
 
 Labels are enabled by default. (Labels can be disabled by setting the
 :par:`displayLabels` parameter to false.)
@@ -204,7 +204,7 @@ node: ``topCenter``, ``left``, ``right``, ``bottomCenter``, ``topLeft``,
 ``topRight``, ``bottomLeft``, ``bottomRight``. The ``placementHint``
 parameter may contain one or more of those words, denoting the preferred
 direction(s). The word ``top`` is an abbreviation for
-``topLeft topCenter topRight``; ``bottom``, ``left`` and ``right`` are
+``topLeft topCenter topRight``; ``bottom``, ``left``, and ``right`` are
 similar abbreviations. There is also ``any``, which is the union of all
 eight directions. When ``placementHint`` is set to ``any``, annotations
 will be placed as close as possible to the node.
@@ -216,7 +216,7 @@ largest priority.
 More Information
 ----------------
 
-For more information, refer the visualizers' NED documentations.
+For more information, refer to the visualizers' NED documentation.
 
 Discussion
 ----------
