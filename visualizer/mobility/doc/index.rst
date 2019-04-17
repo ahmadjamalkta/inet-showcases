@@ -7,7 +7,7 @@ Goals
 In INET simulations, the movement of mobile nodes is often as important
 as the communication among them. However, as mobile nodes roam, it is
 often difficult to visually follow their movement. INET provides a
-visualizer that not only makes visually tracking mobile nodes easier,
+visualizer that not only makes visually tracking mobile nodes easier
 but also indicates other properties like speed and direction.
 
 This showcase consists of one simulation model that demonstrates
@@ -54,7 +54,7 @@ The following example shows how to enable mobility visualization
 features. The simulation can be run by choosing the
 ``VisualizingFeatures`` configuration from the ini file.
 
-Three nodes of the type :ned:`AdhocHost`, ``host1``, ``host2`` and
+Three nodes of the type :ned:`AdhocHost`, ``host1``, ``host2``, and
 ``host3``, are placed in the scene. They are roaming within
 predefined borders.
 
@@ -64,9 +64,9 @@ settings of mobility visualization are used.
 .. video:: NoFeatures_v0620.m4v
    :width: 698
 
-It is difficult to track the nodes, because they are moving randomly and
+It is difficult to track the nodes because they are moving randomly and
 quite fast. In our next experiment, we enable movement trails, velocity
-vectors and orientation arcs. We expect that nodes can be tracked
+vectors, and orientation arcs. We expect that nodes can be tracked
 easier.
 
 .. literalinclude:: ../omnetpp.ini
