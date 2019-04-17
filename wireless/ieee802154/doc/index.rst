@@ -37,17 +37,17 @@ model:
 
 This showcase demonstrates the narrowband model,
 :ned:`Ieee802154NarrowbandScalarRadio`. It simulates a PHY that uses
-DSSS-OQPSK modulation, and operates at 2.45 GHz. By default, signals
+DSSS-OQPSK modulation and operates at 2.45 GHz. By default, signals
 are transmitted with a bandwidth of 2.8 MHz using 2.24 mW transmission
 power. The model uses the scalar analog model.
 
 The :ned:`Ieee802154NarrowbandInterface` module contains a
-:ned:`Ieee802154NarrowbandScalarRadio` and the corresponsing
+:ned:`Ieee802154NarrowbandScalarRadio` and the corresponding
 :ned:`Ieee802154NarrowbandMac`. The radio medium module required by
 the radio is :ned:`Ieee802154NarrowbandScalarRadioMedium`. As per the name, the
 radio uses the scalar analog model for signal representation. The radio
 has default values for its parameters, based on the 802.15.4 standard.
-For example, by default it uses the carrier frequency of 2450 MHz, 2.8
+For example, by default, it uses the carrier frequency of 2450 MHz, 2.8
 MHz bandwidth, 250 kbps bitrate, and 2.24 mW transmission power. As
 such, it works "out-of-the-box", without setting any of its parameters.
 The radio medium uses :ned:`BreakpointPathLoss` by default as its path loss
@@ -143,9 +143,9 @@ contains a :ned:`SensorStateBasedEpEnergyConsumer`. The
 ``residualEnergyCapacity`` statistic is available.
 
 We want to measure the energy consumption of the different nodes in the
-network. For this, we use the ``Ieee802154Power`` configuration in .
-This just extends the ``Ieee802154`` configuration with a simulation
-time limit of 100s:
+network. For this, we use the ``Ieee802154Power`` configuration in
+:download:`omnetpp.ini <../omnetpp.ini>`. This just extends the
+``Ieee802154`` configuration with a simulation time limit of 100s:
 
 .. literalinclude:: ../omnetpp.ini
    :start-at: Ieee802154Power
@@ -162,7 +162,7 @@ The sensors consumed a bit more power than the lamps, and the controller
 consumed the most energy. Nodes in the same role (i.e. lamps, sensors)
 consumed roughly the same amount of energy. Although the controller
 transmitted eight times as much as the sensors, it consumed just about
-25% more energy. This is because energy consumption was dominated by
+25% more energy. This is because energy consumption was dominated by the
 idle radio state. The controller transmitted in about 8% of the time,
 the sensors about 1%. Also, all transmissions were received by all nodes
 in the network at the PHY level, thus they shared the energy consumption
