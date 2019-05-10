@@ -6,7 +6,7 @@ Goals
 
 Most routing protocols for mobile ad hoc networks (MANETs) can be categorized
 as being either reactive or proactive. INET contains various routing
-protocols for MANETs from both categories, and from other categories as
+protocols for MANETs from both categories, and other categories as
 well.
 
 This showcase demonstrates the configuration and operation of three
@@ -25,7 +25,7 @@ mobile nature of the nodes, the network topology can change over time.
 The nodes create their own network infrastructure: each node also acts
 as a router, forwarding traffic in the network. MANET routing protocols
 need to adapt to changes in the network topology and maintain routing
-information, so packets can be forwarded to their destinations. Although
+information, so that packets can be forwarded to their destinations. Although
 MANET routing protocols are mainly for mobile networks, they can also be
 useful for networks of stationary nodes that lack network
 infrastructure.
@@ -46,10 +46,10 @@ a change in the network topology. Examples of reactive MANET routing
 protocols include AODV, DSR, ABR, etc.
 
 ``Proactive`` or table-driven routing protocols continuously maintain
-routing information, so the routes in the network are always up to date.
-This typically involves periodic routing maintenance messages exchanged
+routing information so the routes in the network are always up to date.
+This update typically involves periodic routing maintenance messages exchanged
 throughout the network. These types of protocols use more maintenance
-transmissions than reactive protocols in order to make sure the routing
+transmissions than reactive protocols to make sure the routing
 information is always up-to-date (they update it even when there is no
 change in the network topology). Examples of reactive MANET routing
 protocols include DSDV, OLSR, Babel, etc.
@@ -62,7 +62,7 @@ information, latency is lower than in the case of reactive protocols.
 
 There are other types of MANET routing protocols, such as Hybrid (both
 reactive and proactive), Hierarchical, and Geographical routing. INET
-features several routing protocols, for MANETs and for other uses
+features several routing protocols, for MANETs and other uses
 (including wired and wireless cases). See
 `/inet/src/inet/routing <https://github.com/inet-framework/inet/tree/master/src/inet/routing>`__
 directory for the available routing protocols.
@@ -247,7 +247,7 @@ looks like the following:
    :align: center
 
 The nodes are scattered on the scene. The source and destination
-nodes are stationary, the other nodes are configured to move in random
+nodes are stationary, and the other nodes are configured to move in random
 directions. The communication ranges are set up so that ``source``
 cannot reach ``destination`` directly but through the intermediate
 nodes. The routing protocols will adapt the routes to the changing
@@ -268,7 +268,7 @@ edge of the scene. The mobility settings are the following:
 The ping app in ``source`` will send one ping request every second to
 ``destination``.
 
-In INET, AODV is implemented by the :ned:`Aodv` module. This is configured
+In INET, AODV is implemented by the :ned:`Aodv` module. This module is configured
 in :download:`omnetpp.ini <../omnetpp.ini>` as the routing protocol
 type in :ned:`ManetRouter`:
 
@@ -294,8 +294,8 @@ The :par:`activeRouteTimeout` parameter sets the timeout for the active
 routes. If the routes are not used for this period, they become
 inactive. The :par:`deletePeriod` parameter sets the period after which the
 inactive routes are deleted. The :par:`activeRouteTimeout` parameter is
-lowered from the default 3s to 1s, the :par:`deletePeriod` parameter is
-lowered from the default 15s to 0.5s in order to make the protocol react
+lowered from the default 3s to 1s, and the :par:`deletePeriod` parameter is
+lowered from the default 15s to 0.5s to make the protocol react
 faster to the rapidly changing network topology. Higher mobility results
 in routes becoming invalid faster. Thus the routing protocol can work
 better - react to topology changes faster - with lower timeout values.
@@ -321,8 +321,8 @@ sends a unicast ``AodvRrep``. It is forwarded on the reverse path the
 RREQ message arrived on
 (``destination``->``node6``->``node1``->``source``). As the intermediate
 nodes receive the RREP message, the routes to ``destination`` are
-created. The routes are visualized with black arrows, the
-:ned:`RoutingTableVisualizer` is configured to only visualize routes
+created. The routes are visualized with black arrows, and the
+:ned:`RoutingTableVisualizer` is configured to visualize only the routes
 leading to ``destination``. When the route is established in ``source``,
 it sends the ping request packet, which gets to the destination. The
 ping reply packet gets back to ``source`` on the reverse path.
@@ -377,7 +377,7 @@ set two parameters of the protocol:
 The :par:`helloInterval` parameter controls the frequency of the periodic
 updates, or hello messages. Setting this parameter to a higher value
 decreases the protocol overhead, but the network will react more slowly
-to changes in topology. We lower it from the default 5s to 1s in order
+to changes in topology. We lower it from the default 5s to 1s
 to make the network more adaptive to rapid changes. When a route is not
 used or updated after a time, it gets deleted. The ``routeLifetime``
 parameter sets after how long the routes are deleted after not being
@@ -460,11 +460,11 @@ closer to ``source`` than ``destination``. From there, it gets to source
 through ``node9`` and ``node11``.
 
 Note that the reply packet didn't get back on the same route as the
-request packet. Also, it might happen that a packet is not routed to a
+request packet. Also, a packet is might not be routed to a
 closer neighbor because the sender doesn't yet know about it (and its
 position).
 
-Also, note that there are no IP routes, the ``ipv4`` module routing
+Also, note that there are no IP routes; the ``ipv4`` module routing
 tables are empty. Instead, :ned:`Gpsr` maintains the positions of the nodes
 in communication range (those that a beacon was received from) and uses
 that for routing decisions. Here is ``node12``'s neighbor position
