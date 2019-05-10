@@ -20,7 +20,7 @@ physical layer protocols like Ethernet and 802.11.
 The model
 ---------
 
-In order to record PCAP traces in a node, a :ned:`PcapRecorder` module
+To record PCAP traces in a node, a :ned:`PcapRecorder` module
 needs to be included in it. Pcap recorder modules can be easily included
 in hosts and routers by specifying their :par:`numPcapRecorders` parameter
 (available in modules that extend :ned:`LinkLayerNodeBase`, such as
@@ -34,17 +34,17 @@ has to be specified by the :par:`pcapFile` parameter. This parameter acts
 as the main switch for recording, thus specifying this parameter enables
 packet capture. The PCAP recorder writes traces in the original PCAP
 format, not the next generation one (PcapNg.) There can be packets with
-only one link layer header type in the PCAP file (this is a limitation
-of the original PCAP file format.) The PCAP file's link layer header
-type needs to be set with the :par:`pcapNetwork` parameter, so PCAP
+only one link-layer header type in the PCAP file (this is a limitation
+of the original PCAP file format.) The PCAP file's link-layer header
+type needs to be set with the :par:`pcapNetwork` parameter, so that PCAP
 programs interpret the traces correctly. Some widely used type codes are
 the following:
 
--  ethernet: 1
+-  Ethernet: 1
 -  802.11: 105
--  ppp: 204
+-  PPP: 204
 
-The complete list of link layer header type codes can be found
+The complete list of link-layer header type codes can be found
 `here <http://www.tcpdump.org/linktypes.html>`__.
 
 The :par:`moduleNamePatterns` parameter specifies which modules' traffic
@@ -61,25 +61,25 @@ protocol names registered in INET (see
 `/inet/src/inet/common/Protocol.cc <https://github.com/inet-framework/inet/blob/master/src/inet/common/Protocol.cc>`__)
 The parameter's default value is ``"ethernetmac ppp ieee80211mac"``.
 
-By default the PCAP recorder module records L2 frames, but setting the
+By default, the PCAP recorder module records L2 frames, but setting the
 ``moduleNamePatterns`` to ``ipv4``, for example, lets one record L3
 frames (note that the parameter's value is lowercase because it refers
-to the actual ``ipv4`` module in the host, not the module type.) In
-order to record IP frames, the :par:`pcapNetwork` parameter also needs to
-be set to the proper link layer header type (101 - raw IP), and the
+to the actual ``ipv4`` module in the host, not the module type.)
+To record IP frames, the :par:`pcapNetwork` parameter also needs to
+be set to the proper link-layer header type (101 - raw IP), and the
 :par:`dumpProtocols` parameter to ``ipv4`` (see the configuration section
 below.)
 
 When a node connects to the network via just one kind of interface,
-specifying the link layer header type is sufficient for capturing a
+specifying the link-layer header type is sufficient for capturing a
 proper trace. However, if there are multiple kinds of interfaces the
 node connects with, the set of captured interfaces or physical layer
-protocols should be narrowed to the ones with the link layer header type
+protocols should be narrowed to the ones with the link-layer header type
 specified by the :par:`pcapNetwork` parameter. It is needed because traffic
 for all interfaces is included in the trace by default. Multiple PCAP
 recorder modules need to be included in the network to record packets
-with different link layer headers. One PCAP recorder module should only
-record traces with one link layer header type because the packets with
+with different link-layer headers. One PCAP recorder module should only
+record traces with one link-layer header type because the packets with
 the other header types would not be recognized by PCAP programs.
 
 Additionally, there are two packet filtering parameters. The
@@ -95,7 +95,7 @@ sections for examples.
 
 To summarize: the :par:`moduleNamePatterns` parameter specifies which
 modules' outputs should be captured. The :par:`pcapNetwork` parameter sets
-the link layer header type according to the captured module outputs, so
+the link-layer header type according to the captured module outputs, so
 PCAP programs can interpret the PCAP file correctly. The
 :par:`dumpProtocols` parameter can narrow the set of recorded protocols at
 the level of capture. The :par:`packetFilter` and :par:`packetDataFilter`
@@ -106,8 +106,8 @@ The configuration
 
 The example simulation for this showcase contains wired hosts, wireless
 hosts, and routers. The hosts are configured to generate TCP, UDP and
-ICMP traffic. The hosts connect to routers via ethernet, the connection
-between the routers is ppp. The wireless hosts communicate via 802.11.
+ICMP traffic. The hosts connect to routers via Ethernet; the connection
+between the routers is PPP. The wireless hosts communicate via 802.11.
 The simulation can be run by choosing the ``PcapRecording``
 configuration from the ini file. The simulation uses the following
 network:
@@ -118,15 +118,15 @@ network:
 The network contains two ``adhocHost``\ s named ``host1`` and ``host2``,
 and two :ned:`StandardHost`\ s named ``ethHost1`` and ``ethHost2``. There
 are two :ned:`Router` modules (``router1`` and ``router2``), which are
-connected to each other by ppp. Each wired host is connected to one of
-the routers via ethernet. The network also contains an
+connected by PPP. Each wired host is connected to one of
+the routers via Ethernet. The network also contains an
 :ned:`Ipv4NetworkConfigurator`, an :ned:`Ieee80211ScalarRadioMedium`, and an
 :ned:`IntegratedMultiVisualizer` module.
 
 Traffic generation is set up the following way: ``host1`` is configured
 to send a UDP stream to ``host2`` (via 802.11), ``ethHost1`` is
 configured to open a TCP connection to ``ethHost2``, and send a 1Mbyte
-file (via ethernet). Additionally, ``ethHost1`` is configured to ping
+file (via Ethernet). Additionally, ``ethHost1`` is configured to ping
 ``ethHost2``.
 
 .. todo::
@@ -142,10 +142,10 @@ file (via ethernet). Additionally, ``ethHost1`` is configured to ping
       :start-at: host1.numPcapRecorders
       :end-before: verbose
 
-   We configure `host1`'s PCAP recorder to use the 802.11 link layer headers,
-   and `ethHost1`'s PCAP recorder to use ethernet link layer headers.
+   We configure `host1`'s PCAP recorder to use the 802.11 link-layer headers,
+   and `ethHost1`'s PCAP recorder to use Ethernet link-layer headers.
    There are two PCAP recorder modules in `router1`, with one of them recording
-   ethernet traffic on `eth0` and the other ppp traffic on `ppp0`.
+   Ethernet traffic on `eth0` and the other PPP traffic on `ppp0`.
    Additionally, there is a PCAP recorder in `ethHost2`, which is set to record
    traffic of the `ipv4` module. -->
 
@@ -155,7 +155,7 @@ We set up multiple PCAP recorder modules in various hosts in the
 network:
 
 In ``host1``, we'll record 802.11 traffic on the ``wlan0`` interface. We
-configure ``host1``'s PCAP recorder to use the 802.11 link layer
+configure ``host1``'s PCAP recorder to use the 802.11 link-layer
 headers:
 
 .. literalinclude:: ../omnetpp.ini
@@ -164,7 +164,7 @@ headers:
    :end-at: /host1.pcap
 
 In ``host2``, we'll record only the ARP packets from the 802.11 traffic
-on ``wlan0``. The link layer header type is set to 802.11, and the
+on ``wlan0``. The link-layer header type is set to 802.11, and the
 :par:`packetDataFilter` is set to record only to packets of ``ArpPacket``
 class:
 
@@ -181,8 +181,8 @@ packet inspector on the following image:
    :width: 60%
    :align: center
 
-In ``ethHost1``, we'll record ethernet traffic on the ``eth0``
-interface. We set the link layer header type to ethernet:
+In ``ethHost1``, we'll record Ethernet traffic on the ``eth0``
+interface. We set the link-layer header type to ethernet:
 
 .. literalinclude:: ../omnetpp.ini
    :language: ini
@@ -190,7 +190,7 @@ interface. We set the link layer header type to ethernet:
    :end-at: /ethHost1.pcap
 
 There are two PCAP recorder modules in ``router1``, with one of them
-recording ethernet traffic on ``eth0`` and the other ppp traffic on
+recording Ethernet traffic on ``eth0`` and the other PPP traffic on
 ``ppp0``. The :par:`moduleNamePatters` parameter needs to be set for both
 PCAP recorder modules, because ``router1`` has two interfaces.
 
@@ -201,7 +201,7 @@ PCAP recorder modules, because ``router1`` has two interfaces.
 
 In ``router2``, we'll record only packets carrying TCP data on the
 ``eth0`` interface. ``router2`` has two interfaces, so the
-:par:`moduleNamePatters` parameter needs to be set. The link layer header
+:par:`moduleNamePatters` parameter needs to be set. The link-layer header
 type is set to ethernet, and the packet data filter is set to match
 packets containing an ``Ipv4Header``, and where the ``totalLengthField``
 field's value is 576 (the size of TCP data packets with IP
@@ -223,7 +223,7 @@ In ``ethHost2``, we'll record traffic of the ``ipv4`` module. The
 
 By default, modules like :ned:`Ipv4` and :ned:`EthernetInterface` don't
 compute CRC and FCS frames, but assumes they are correct ("declared
-correct" mode.) In order to include the CRC and FCS values in the
+correct" mode.) To include the CRC and FCS values in the
 capture file, L2 and L3 modules need to be set to compute CRC and FCS:
 
 .. literalinclude:: ../omnetpp.ini
@@ -234,7 +234,7 @@ capture file, L2 and L3 modules need to be set to compute CRC and FCS:
 Note that these settings are required, otherwise an error is returned.
 
 The :par:`alwaysFlush` parameter controls whether to write packets to the
-pcap file as they are recorded or after the simulation has concluded.
+PCAP file as they are recorded or after the simulation has concluded.
 It is ``false`` by default, but it's set to ``true`` in all PCAP
 recorders to make sure there are recorded packets even if the simulation
 crashes:
@@ -255,9 +255,9 @@ The following video shows the traffic in the network:
    <!--internal video recording, playback speed 1, no animation speed, run until first sendTimer (t=0.002), step, stop at about 10.5 seconds simulation time-->
 
 The following images show the same packets viewed in Qtenv's packet mode
-inspector panel and in the PCAP trace opened with Wireshark. Both
+inspector panel and the PCAP trace opened with Wireshark. Both
 display the same data about the same packet (with the same data,
-sequence number, crc, etc. Click to zoom.)
+sequence number, CRC, etc. Click to zoom.)
 
 TCP data, in ``ethHost1`` (sent from ``ethHost1`` to ``ethHost2``):
 
