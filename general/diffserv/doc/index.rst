@@ -22,8 +22,8 @@ About Differentiated Services
 
 The INET :doc:`User's Guide </users-guide/ch-diffserv>`, among many other
 resources, contains a good overview of Differentiated Services.
-If you are unfamiliar with the concept, we recommend that you read
-that first, because here we provide a brief summary only.
+If you are unfamiliar with the concept, we recommend you to read
+that first, because here we provide a summary only.
 
 Differentiated Services classifies traffic entering a DiffServ domain
 into a limited number of forwarding classes, and encodes the forwarding
@@ -106,7 +106,7 @@ If both of them are used, the layout of the interface looks like the following:
 
 In the ``VoIP_WithPolicing`` and ``VoIP_WithPolicingAndQueuing``
 configurations, INET's :ned:`TrafficConditioner` module is used in the
-router's PPP interface in order to achieve the required policing.
+router's PPP interface to achieve the required policing.
 
 .. figure:: TrafficConditioner.png
    :scale: 100%
@@ -145,7 +145,7 @@ the ``omnetpp.ini`` file:
 
 In the ``VoIP_WithPolicingAndQueuing`` configuration, a
 :ned:`DiffservQueue` module is used instead of :ned:`DropTailQueue` in the
-router's PPP interface in order to achieve priority queuing.
+router's PPP interface to achieve priority queuing.
 
 .. figure:: DiffServQueue.png
    :scale: 100%
@@ -159,7 +159,7 @@ set in the traffic conditioner. EF packets - these are the VoIP packets
 in this case - are stored in a dedicated queue, and served first when a
 packet is requested. Because they can preempt the other queues, the rate
 of the EF packets should be limited to a fraction of the bandwidth of
-the link. This is achieved by metering the EF traffic with a token
+the link. Limiting is achieved by metering the EF traffic with a token
 bucket meter and dropping packets that do not conform to the traffic
 profile configured in the ``omnetpp.ini`` file:
 
@@ -190,7 +190,7 @@ As expected, the quality of the received sound using the
 
 .. audio:: VoIP_WithoutQoS_results.wav
 
-The jaggedness in the received audio is due to the fact that approximately half
+The jaggedness in the received audio is because approximately half
 of the VoIP packets sent by ``voipPhone1`` are dropped by :ned:`DropTailQueue`
 in the output interface of the router.
 
