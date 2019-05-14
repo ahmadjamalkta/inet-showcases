@@ -23,10 +23,10 @@ In INET, data link activity can be visualized by including a
 :ned:`DataLinkVisualizer` module in the simulation. Adding an
 :ned:`IntegratedVisualizer` module is also an option because it also
 contains a :ned:`DataLinkVisualizer` module. Data link visualization is
-disabled by default, it can be enabled by setting the visualizer's
+disabled by default; it can be enabled by setting the visualizer's
 :par:`displayLinks` parameter to true.
 
-:ned:`DataLinkVisualizer` is able to observe packets at *service*, *peer*
+:ned:`DataLinkVisualizer` can observe packets at *service*, *peer*
 and *protocol* level. The level where packets are observed can be set by
 the :par:`activityLevel` parameter.
 
@@ -46,7 +46,7 @@ unless it is refreshed by further packets. The style, color, fading time
 and other graphical properties can be changed with parameters of the
 visualizer.
 
-By default, all packets, interfaces and nodes are considered for the
+By default, all packets, interfaces, and nodes are considered for the
 visualization. This selection can be narrowed to certain packets and/or
 nodes with the visualizer's :par:`packetFilter`, :par:`interfaceFilter`, and
 :par:`nodeFilter` parameters.
@@ -159,7 +159,7 @@ to the presence of the :par:`packetFilter` parameter.
 It also is possible to filter for network nodes. For the following
 example, let's assume we want to display traffic between the hosts
 ``source1`` and ``destination1`` only, along the path ``etherSwitch1``,
-``etherSwitch4`` and ``etherSwitch2``. To this end, we set the
+``etherSwitch4``, and ``etherSwitch2``. To this end, we set the
 visualizer's :par:`nodeFilter` parameter by using the following line (note
 the curly brace syntax used for specifying numeric substrings).
 
@@ -168,7 +168,7 @@ the curly brace syntax used for specifying numeric substrings).
    :end-at: dataLinkVisualizer.nodeFilter
    :language: ini
 
-This is what it looks like when we run the simulation:
+It looks like the following when we run the simulation:
 
 .. video:: Filtering2_v0613.m4v
    :width: 698
@@ -191,7 +191,7 @@ We use the following wireless network for this example.
 .. figure:: ActivityLevel_v1206.png
    :width: 100%
 
-The network consists of three :ned:`AdhocHost` nodes: ``person1``, ``person2``
+The network consists of three :ned:`AdhocHost` nodes: ``person1``, ``person2``,
 and ``videoServer``. ``VideoServer`` will be streaming a video to
 ``person1``. ``Person2`` will be inactive in this example.
 
@@ -249,9 +249,9 @@ green arrow is displayed between ``videoServer`` and ``person1``,
 representing data link activity at *service* level.
 
 Another phenomenon can also be observed in the video. There is
-*protocol* level data link activity between ``person2`` and the other
-nodes. This is because frames are also received in the physical layer
-of ``person2``, but they are dropped at data link layer level because
+*protocol*-level data link activity between ``person2`` and the other
+nodes. This activity is because frames are also received in the physical layer
+of ``person2``, but they are dropped at the data link layer level because
 they are not addressed to ``person2``.
 
 Visualizing Data Link Activity in a Mobile Ad-Hoc Network
@@ -342,7 +342,7 @@ towards the next hop.
 
 When the existing route breaks due to two nodes drifting away (out of
 the communication range of each other), this manifests as a link-level
-failure (ACK frames do not arrive). This condition is detected by AODV
+failure (ACK frames do not arrive). This condition is detected by AODV,
 and it starts searching for a new route. When the new route is found,
 the ping traffic resumes.
 
