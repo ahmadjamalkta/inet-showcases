@@ -53,7 +53,7 @@ to consider (again, by default all nodes.)
 The visualizer reacts to changes. For example, when a routing protocol
 changes a routing entry, or an IP address gets assigned to an interface
 by DHCP, the visualizer automatically updates the visualizations
-according to the specified filters. This is very useful e.g. for the
+according to the specified filters. This feature is very useful, e.g. for the
 simulation of mobile ad-hoc networks.
 
 Displaying all routing tables
@@ -83,8 +83,8 @@ When the simulation is run, the network looks like this:
    :width: 80%
    :align: center
 
-Note that IP addresses are displayed above the nodes. This has nothing
-to do with the :ned:`RoutingTableVisualizer`, they are displayed because we
+Note that IP addresses are displayed above the nodes. These annotations has nothing
+to do with the :ned:`RoutingTableVisualizer`; they are displayed because we
 configured it in :ned:`InterfaceTableVisualizer` to improve clarity.
 
 Here are the routing tables of the two hosts and the router, with the
@@ -121,7 +121,7 @@ Filtering routing table entries
 -------------------------------
 
 By default, the best matching routing table entries from all routing
-tables towards all destinations are visualized. This can leave the
+tables towards all destinations are visualized. This visualization can leave the
 network cluttered with arrows. It is possible to narrow the selection of
 visualized routing tables with filter parameters. The goal of this
 section is to demonstrate the use of the :par:`nodeFilter` and
