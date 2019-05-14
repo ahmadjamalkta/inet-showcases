@@ -88,10 +88,10 @@ packets to ``destination``. The packet stream starts at two seconds
 after ``destination`` got associated with the access point. The
 ``source`` is connected to the ``etherSwitch`` via a high speed, 100
 Gbit/s ethernet cable, while the ``etherSwitch`` and the ``router`` are
-connected with a low speed, 10 MBit/s cable. This creates a bottleneck
+connected with a low speed, 10 MBit/s cable. This low speed cable creates a bottleneck
 in the network, between the switch and the router. The source host is
 configured to generate more UDP traffic than the 10Mbit/s channel can
-carry. The cause of packet drops in this case is that the queue in
+carry. The cause of packet drops, in this case, is that the queue in
 ``etherSwitch`` fills up.
 
 The queue types in the switch's Ethernet interfaces are set to
@@ -102,7 +102,7 @@ queue of the switch.
 The visualization is activated with the ``displayPacketDrops``
 parameter. The visualizer is configured to display the packet name
 and the drop reason, by setting the :par:`labelFormat` parameter.
-Also, the fade out time is set to three seconds, so that the packet
+Also, the fade-out time is set to three seconds, so that the packet
 drop animation is more visible.
 
 .. literalinclude:: ../omnetpp.ini
@@ -112,7 +112,7 @@ drop animation is more visible.
 
 When the simulation is run, the UDP stream starts at around two seconds,
 and packets start accumulating in the queue of the switch. When the
-queue fills up, the switch starts dropping packets. This is illustrated
+queue fills up, the switch starts dropping packets. This scenario is illustrated
 in this animation:
 
 .. video:: queueoverflow1.mp4
@@ -171,17 +171,16 @@ file. The configuration uses the following network:
 It contains two :ned:`AdhocHost`'s, named ``source`` and ``destination``.
 The hosts' communication ranges are set up so they are out of range of
 each other. The source host is configured to ping the destination host.
-The reason for packet drops in this case is that the hosts are not in
+The reason for packet drops, in this case, is that the hosts are not in
 range, thus they can't reach each other. The ``source`` transmits the
 ping packets, but it doesn't receive any ACK in reply. The ``source's``
 MAC module drops the packets after the retry limit has been reached.
-
-This is illustrated in the following animation:
+This scenario is illustrated in the following animation:
 
 .. video:: retry.mp4
    :width: 512
 
-This looks like the following in the logs:
+These events looks like the following in the logs:
 
 .. figure:: log_macretrylimit_2.png
    :width: 100%
@@ -201,7 +200,7 @@ It contains two connected :ned:`StandardHost`'s. The
 :ned:`Ipv4NetworkConfigurator` is instructed not to add any static routes,
 and ``host1`` is configured to ping ``host2``.
 
-The ping packets can't be routed, thus the IP module drops them. This is
+The ping packets can't be routed, thus the IP module drops them. This scenario is
 illustrated in the following video:
 
 .. video:: noroute.mp4
