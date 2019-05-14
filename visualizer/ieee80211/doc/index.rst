@@ -20,7 +20,7 @@ In INET, IEEE 802.11 network membership can be visualized by including a
 :ned:`Ieee80211Visualizer` module in the simulation. Adding an
 :ned:`IntegratedVisualizer` is also an option because it also contains a
 :ned:`Ieee80211Visualizer`. Displaying network membership is disabled by
-default, it can be enabled by setting the visualizer's
+default; it can be enabled by setting the visualizer's
 :par:`displayAssociations` parameter to ``true``.
 
 The :ned:`Ieee80211Visualizer` displays an icon and the SSID above network
@@ -94,7 +94,7 @@ contains two :ned:`AccessPoint`'s with different SSIDs, ``alpha`` and
 ``bravo``. There is also a :ned:`WirelessHost` which is configured to move
 horizontally back and forth between the two access points. Transmission
 powers are configured so that when a host gets near one access point, it
-will go out of the range of the other access point. This will trigger a
+will go out of the range of the other access point. This transition will trigger a
 handover.
 
 The communication ranges of the access points are visualized as blue
