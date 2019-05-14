@@ -48,7 +48,7 @@ specified either as a suffix on the icon name (``node/router_vl``), or
 with the ``is`` display string tag.
 
 The above display string based visualization, being an OMNeT++ mechanism,
-do not require :ned:`NetworkNodeCanvasVisualizer` to be present. However,
+does not require :ned:`NetworkNodeCanvasVisualizer` to be present. However,
 :ned:`NetworkNodeCanvasVisualizer` is required for several other visualizers
 (e.g. those that display annotations around the node icon) to work.
 In addition, :ned:`NetworkNodeCanvasVisualizer` lets you use an arbitrary image
@@ -201,7 +201,7 @@ Adjusting orientation
 
 The orientation of network nodes is updated by their own mobility
 submodules. It is possible that the orientation of the 3D model does not
-match with the orientation of the node. For example, when we add motion
+match the orientation of the node. For example, when we add motion
 to our previous configuration (select ``AddingMovement`` from the ini file),
 the boxman will walk sideways:
 
@@ -233,7 +233,7 @@ More Information
 
 This example only demonstrates the key features of network node
 visualization. For more information, refer to the NED documentation of
-:ned:`NetworkNodeVisualizer`, :ned:`NetworkNodeCanvasVisualizer` and
+:ned:`NetworkNodeVisualizer`, :ned:`NetworkNodeCanvasVisualizer`, and
 :ned:`NetworkNodeOsgVisualizer`.
 
 Discussion
