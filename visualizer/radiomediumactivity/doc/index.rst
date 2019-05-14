@@ -35,7 +35,7 @@ three main features, and boolean parameters for turning them on/off:
 
 The features above will be described in more detail in the following
 sections. The scope of the visualization can be adjusted with parameters
-as well. By default, all packets, interfaces and nodes are considered
+as well. By default, all packets, interfaces, and nodes are considered
 for the visualization. The selection can be narrowed with the
 visualizer's :par:`packetFilter`, :par:`packetDataFilter`,
 :par:`interfaceFilter`, and :par:`nodeFilter` parameters. Note that one
@@ -105,8 +105,8 @@ signals:
 .. video:: propagation9.mp4
    :width: 698
 
-The ``host1`` sends an ARP request packet to ``host2``, which sends an
-ARP reply. The ``host1`` ACKs it, then sends the first UDP packet. This
+``host1`` sends an ARP request packet to ``host2``, which sends an
+ARP reply. ``host1`` ACKs it, then sends the first UDP packet. This transmission
 is followed by ``host2's`` ACK. The transmissions are visualized with
 animated disks. The disk has an opacity gradient, which correlates with
 the decrease in signal power as the distance from the transmitter
@@ -142,7 +142,7 @@ speed, so that events that happen quickly don't appear to be so fast as
 not to be observable (e.g. a signal's edge propagating from a node), and
 other events that take longer on the timescale don't appear to be slow
 and boring (e.g. the duration of a radio frame.) When there is a signal
-boundary (either at the beginning or at the end of a transmission)
+boundary (either at the beginning or the end of a transmission)
 traveling on the scene, the simulation is slowed down, and the
 rippling wave pattern is visible as the signal is propagating. When the
 signal is "everywhere" on the scene, i.e. its "first bit" has
@@ -288,7 +288,7 @@ parameters, the transmission travels 500 meters per second on the
 scene. The animation durations of the transmissions are different
 for certain packets. The UDP packet transmission from ``relay`` takes
 more time than the one from ``source`` because of the different bitrate.
-Transmission of the ACKs is the shortest because they are smaller
+The transmission of the ACKs is the shortest because they are smaller than data
 packets. (Even though they are transmitted with the slower
 control bitrate, instead of data bitrate.)
 
@@ -317,13 +317,13 @@ Here is what happens when the simulation is run:
 .. video:: interference.mp4
    :width: 698
 
-The two sources can't detect each other's transmission, but they receive
-the ACKs and ping replies of the destination. This helps with collision
-avoidance, but they often transmit simultaneously. When they do, both
-signals are present at the destination concurrently, visualized by the
-transmission disks overlapping. Since both sources are in communication
-range with the destination, the simultaneous transmissions result in
-collisions.
+The two sources can't detect each other's transmissions, but they receive
+the ACKs and ping replies of the destination. Receiving these transmissions
+helps with collision avoidance, but the two sources often transmit simultaneously.
+When they do, both signals are present at the destination concurrently,
+visualized by the transmission disks overlapping. Since both sources are
+in communication range with the destination, the simultaneous transmissions
+result in collisions.
 
 The simulation slows down whenever there is a signal boundary
 propagating on the scene, even when there is also a signal with no
@@ -331,7 +331,7 @@ boundary present. Such is the case in the above video. ``source1``
 starts transmitting, and the signal edge is propagating. When it reaches
 the farthest node, ``source2``, the signal is present on the entire
 scene, and the simulation speeds up. When ``source2`` starts
-transmitting, the simulation slows down again, despite that
+transmitting, the simulation slows down again, although
 ``source1``'s signal is still present on the entire scene.
 
 Generally, several signals being present at a receiving node doesn't
