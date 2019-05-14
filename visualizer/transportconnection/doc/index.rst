@@ -37,14 +37,14 @@ are interested in that, take a look at :ned:`TransportRouteVisualizer`,
 covered in the `Visualizing Transport Path
 Activity <../transportpathactivity>`__ showcase.
 
-The visualization is turned off by default, it can be turned on by
+The visualization is turned off by default; it can be turned on by
 setting the :par:`displayTransportConnections` parameter of the visualizer
 to ``true``.
 
 It is possible to filter the connections being visualized. By default,
 all connections are included. Filtering by hosts and port numbers can be
 achieved by setting the :par:`sourcePortFilter`, :par:`destinationPortFilter`,
-:par:`sourceNodeFilter` and :par:`destinationNodeFilter` parameters.
+:par:`sourceNodeFilter`, and :par:`destinationNodeFilter` parameters.
 
 The icon, colors and other visual properties can be configured by
 setting the visualizer's parameters.
@@ -101,8 +101,8 @@ addresses and routing tables are configured by a
 
 The hosts are configured to open TCP connections to the server:
 
--  ``host1``: two connections on port 80 (http), one connection on port
-   22 (ssh)
+-  ``host1``: two connections on port 80 (HTTP), one connection on port
+   22 (SSH)
 -  ``host2``: one connection on port 80, another one connection on port
    22
 
@@ -113,7 +113,7 @@ destination port 80:
 
    *.visualizer.*.transportConnectionVisualizer.destinationPortFilter = "80"
 
-When the simulation is run and the connections are established, the
+When the simulation is run, and the connections are established, the
 network will look like the following. Note that there are several icons
 above ``host1`` and the server, indicating multiple connections.
 Endpoints can be matched by color.
