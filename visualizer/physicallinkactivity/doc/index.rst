@@ -23,7 +23,7 @@ In INET, physical link activity can be visualized by including a
 :ned:`PhysicalLinkVisualizer` module in the simulation. Adding an
 :ned:`IntegratedVisualizer` module is also an option because it also
 contains a :ned:`PhysicalLinkVisualizer` module. Physical link activity
-visualization is disabled by default, it can be enabled by setting the
+visualization is disabled by default; it can be enabled by setting the
 visualizer's :par:`displayLinks` parameter to true.
 
 :ned:`PhysicalLinkVisualizer` observes frames that pass through the
@@ -36,7 +36,7 @@ out unless it is refreshed by further frames. Color, fading time and
 other graphical properties can be changed with parameters of the
 visualizer.
 
-By default, all packets, interfaces and nodes are considered for the
+By default, all packets, interfaces, and nodes are considered for the
 visualization. This selection can be narrowed with the visualizer's
 :par:`packetFilter`, :par:`interfaceFilter`, and :par:`nodeFilter` parameters.
 
@@ -93,7 +93,7 @@ file.
 
 We have configured a wifi infrastructure mode network for this showcase.
 The network consists of one ``accessPoint``, and three wireless hosts,
-``source``, ``destination`` and ``host1``. In this configuration, the
+``source``, ``destination``, and ``host1``. In this configuration, the
 ``source`` host will be pinging the ``destination`` host. ``host1`` does
 not generate any traffic except for connecting to ``accessPoint``.
 
