@@ -29,7 +29,7 @@ In INET, transport path activity can be visualized by including a
 :ned:`TransportRouteVisualizer` module in the simulation. Adding an
 :ned:`IntegratedVisualizer` is also an option because it also contains a
 :ned:`TransportRouteVisualizer`. Transport path activity visualization is
-disabled by default, it can be enabled by setting the visualizer's
+disabled by default; it can be enabled by setting the visualizer's
 :par:`displayRoutes` parameter to true.
 
 :ned:`TransportRouteVisualizer` observes packets that pass through the
@@ -172,7 +172,7 @@ In our second experiment, we want to display traffic only between
 ``source1`` and ``destination1``. For this reason, we set the
 visualizer's :par:`nodeFilter` parameter to display only the part of the
 traffic between ``source1`` and ``destination1``. :par:`PacketFilter` is
-still enabled in this simulation so that video stream will not be
+still enabled in this simulation so that the video stream will not be
 visualized.
 
 We add the following line to the configuration:
@@ -182,7 +182,7 @@ We add the following line to the configuration:
    :end-at: transportRouteVisualizer.nodeFilter
    :language: ini
 
-The following video has been captured from the simulation, and shows
+The following video has been captured from the simulation and shows
 what happens if :par:`nodeFilter` is set.
 
 .. video:: Filtering_NodeFilter_v0615.m4v
@@ -190,7 +190,7 @@ what happens if :par:`nodeFilter` is set.
 
 If you observe the default OMNeT++ packet transmission animation (red
 stripes), you can see that although there is UDP data traffic between
-both source-destination pair, but the traffic is visualized only
+both source-destination pairs, the traffic is visualized only
 between ``source1`` and ``destination1`` because of the :par:`nodeFilter`
 parameter setting.
 
