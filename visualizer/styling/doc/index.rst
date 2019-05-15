@@ -6,12 +6,12 @@ Goals
 
 In INET simulations, multiple visualizers are often used simultaneously.
 Since some of them have similar default looks, it is not always easy to
-tell them apart when watching the simulation. In order to help in
+tell them apart when watching the simulation. To help in
 creating more appealing and more comprehensible simulations, INET
 visualizers have many customization options. These customization options
 are named consistently across all visualizers.
 
-This showcase consists of four examples which demonstrate how to
+This showcase consists of four examples that demonstrate how to
 customize lines, arrows, icons, fonts, and annotations.
 
 | INET version: ``4.0``
@@ -98,7 +98,7 @@ and the customized visualization.
 Font family, font size and font style can be set by using the
 :par:`labelFont` parameter. You can omit any value from the parameter if
 you do not want to change that. For example, you can set ``labelFont``
-to ``"bold"`` so that font family and font size remain unchanged. The
+to ``"bold"``, so that font family and font size remain unchanged. The
 :par:`labelColor` parameter can be set to a single color by using a color
 name or an HTML-style RGB value.
 
