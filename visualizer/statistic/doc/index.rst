@@ -6,13 +6,13 @@ Goals
 
 Usually, statistics collected while the simulation is running are
 analyzed only after the simulation has concluded. In contrast, while the
-simulation is running it is difficult to follow what's happening in the
+simulation is running, it is difficult to follow what's happening in the
 model in terms of statistics. For example, in a video streaming network,
 seeing the throughput of each client gives a quick overview of whether the
 model is working as expected.
 
 Statistics collected by submodules can be visualized at network nodes,
-on the top level canvas. This could help in troubleshooting and in the
+on the top level canvas. This visualization could help in troubleshooting and the
 early detection of problems in simulation models. This showcase contains
 two example simulations, showing the basics and the more advanced
 features of the visualization.
@@ -87,7 +87,7 @@ Displaying packet error rate
 ----------------------------
 
 In the second example simulation, a wireless node will send UDP packets
-to another wireless node as the distance between them incrases. We will
+to another wireless node as the distance between them increases. We will
 display the packet error rate statistic of the received packet at the
 receiving node. The simulation can be run by choosing
 ``PacketErrorRate`` from the ini file. The simulation uses the following
