@@ -70,7 +70,7 @@ represented internally by Cartesian coordinates relative
 to the simulation scene's origin, and the
 :ned:`OsgGeographicCoordinateSystem` module is responsible for
 converting between geographical and Cartesian coordinates.
-In order to define the mapping between the two, the geographical
+To define the mapping between the two, the geographical
 coordinates of the simulation scene's origin must be specified in
 the coordinate system module's :par:`sceneLongitude` and :par:`sceneLatitude`
 parameters. In our configuration, the scene's origin is set to somewhere
@@ -107,13 +107,13 @@ floor is not visible.
 Adding Physical Objects
 -----------------------
 
-The map doesn't affect simulations in any way, just gives a real-world
+The map doesn't affect simulations in any way, it just gives a real-world
 context to them. For network nodes to interact with their environment,
 physical objects have to be added. The example configuration for this
 section can be run by selecting the ``PhysicalObjects`` configuration
 from the ini file. It extends the previous configuration by adding
 physical objects, meant to represent blocks of buildings, to the simulation.
-The objects could affect radio transmissions if an obstacle loss model was set.
+The objects could affect radio transmissions if an obstacle loss model were set.
 
 The network for this configuration extends the network from the previous
 section with a :ned:`PhysicalEnvironment` module:
@@ -133,7 +133,7 @@ configuration with the following:
 The :ned:`PhysicalEnvironment` module is responsible for placing the
 physical objects on the scene. The physical environment module
 doesn't use a coordinate system module by default, but it is configured to use
-the one present in the network. This makes it possible to define the
+the one present in the network. This module makes it possible to define the
 objects using geographical coordinates. The objects are defined in the
 ``obstacle.xml`` config file.
 
