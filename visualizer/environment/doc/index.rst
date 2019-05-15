@@ -6,7 +6,7 @@ Goals
 
 The physical environment has a profound effect on the communication of
 wireless devices. For example, physical objects like walls inside
-buildings constraint mobility. They also obstruct radio signals often
+buildings constraint mobility. They also obstruct radio signals, often
 resulting in packet loss. It's difficult to make sense of the simulation
 without actually seeing where physical objects are.
 
@@ -51,7 +51,7 @@ The isometric view
 ------------------
 
 In this example configuration (``IsometricView`` in the ini file), the
-view is set to isometric projection. This is done by setting the
+view is set to isometric projection, by setting the
 :par:`viewAngle` parameter in :ned:`SceneVisualizer`:
 
 .. literalinclude:: ../omnetpp.ini
@@ -72,7 +72,7 @@ The visualizer also supports OpenGL-based 3D rendering using the
 OpenSceneGraph (OSG) library. If your OMNeT++ installation has been
 compiled with OSG support, you can switch to 3D view using the toolbar.
 The result will look like the following. Note that the
-:ned:`SceneVisualizer` view settings have no effect on the 3D view, you can
+:ned:`SceneVisualizer` view settings have no effect on the 3D view; you can
 use the mouse to move the camera and change the view angle.
 
 .. figure:: 3d.png
