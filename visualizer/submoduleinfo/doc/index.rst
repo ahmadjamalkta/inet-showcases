@@ -12,7 +12,7 @@ in the graphical inspector or the object inspector to access them.)
 
 To help the user, INET contains support for displaying information produced by
 a submodule (or selected submodules) on the top-level canvas, above (or near) the
-corresponding network node icons. This makes such information conveniently
+corresponding network node icons. This feature makes such information conveniently
 available at a glance.
 
 This showcase contains the model of a simple WiFi network and
@@ -53,7 +53,7 @@ information displayed.) Also, the visualization can be turned on and off
 with the :par:`displayInfos` parameter, which is ``true`` by default.
 
 The visualizer can display module information in various ways, selected
-with the :par:`format` parameter. This takes a format string, which can
+with the :par:`format` parameter. This model takes a format string, which can
 contain the following directives:
 
 -  ``%n``: module full name
@@ -117,12 +117,12 @@ It is a compound module itself. The transmission process is in its
 ``tx`` submodule, reception is in its ``rx`` submodule, and
 the submodule responsible for contention in DCF mode is the
 ``dcf.channelAccess.contention`` submodule. All three submodules
-display their internal states via display string ``t`` tags,
+display their internal states via display string ``t`` tags
 so we can use the :ned:`InfoVisualizer` to display them over
 the host icons.
 
 The visualizer allows specifying multiple submodules in the  :par:`modules`
-parameter, so we can list all of *tx*, *rx* and *contention*:
+parameter so that we can list all of *tx*, *rx*, and *contention*:
 
 .. literalinclude:: ../omnetpp.ini
    :start-at: modules = "*.*.wlan[0].mac.tx
