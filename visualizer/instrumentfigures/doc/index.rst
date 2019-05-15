@@ -77,7 +77,7 @@ The network contains two :ned:`AdhocHost` nodes, a client and a server.
 The scenario is that client connects to the server via WiFi, and downloads a 1-megabyte file.
 The client is configured to first move away from the server, eventually
 moving out of its transmission range, then to move back.
-Both hosts are configured to use WiFi adaptive rate control (:ned:`AarfRateControl`),
+Both hosts are configured to use WiFi adaptive rate control (:ned:`AarfRateControl`)
 so the WiFi transmission bit rate will adapt to the changing channel
 conditions, resulting in a varying application level throughput.
 
@@ -173,7 +173,7 @@ This video illustrates what happens when the simulation is run:
    :align: center
 
 The client starts moving away from the server. In the beginning, the
-server transmits with 54 Mbps bit rate. The transmissions are received
+server transmits with a 54 Mbps bit rate. The transmissions are received
 correctly because the two nodes are close. As the client moves further
 away, the signal to noise ratio drops and packet error rate goes up. As
 packet loss increases, the rate control in the server lowers the bit
