@@ -19,9 +19,9 @@ important features of the mobility visualizer.
 About the Visualizer
 --------------------
 
-In INET, mobility of nodes can be visualized by :ned:`MobilityVisualizer`
+In INET, the mobility of nodes can be visualized by :ned:`MobilityVisualizer`
 module (included in the network as part of :ned:`IntegratedVisualizer`). By
-default, mobility visualization is enabled, it can be disabled by
+default, mobility visualization is enabled; it can be disabled by
 setting :par:`displayMovements` parameter to false.
 
 By default, all mobilities are considered for the visualization. This
